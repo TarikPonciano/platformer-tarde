@@ -1,0 +1,56 @@
+[gd_scene load_steps=5 format=3 uid="uid://qxo2p4whtitq"]
+
+[ext_resource type="PackedScene" uid="uid://d10vsmbcp4v2v" path="res://player-foxy.tscn" id="1_fh4qj"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_1m4jj"]
+size = Vector2(37, 643)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_lme1l"]
+size = Vector2(37, 641)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ynouf"]
+size = Vector2(1145.5, 59)
+
+[node name="Main" type="Node2D"]
+
+[node name="Parede Direita" type="StaticBody2D" parent="."]
+
+[node name="Panel3" type="Panel" parent="Parede Direita"]
+offset_left = 1109.0
+offset_top = 5.0
+offset_right = 1149.0
+offset_bottom = 647.0
+metadata/_edit_use_anchors_ = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Parede Direita"]
+position = Vector2(1129, 324)
+shape = SubResource("RectangleShape2D_1m4jj")
+
+[node name="Parede Esquerda" type="StaticBody2D" parent="."]
+
+[node name="Panel" type="Panel" parent="Parede Esquerda"]
+offset_left = -3.0
+offset_top = -1.0
+offset_right = 37.0
+offset_bottom = 641.0
+metadata/_edit_use_anchors_ = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Parede Esquerda"]
+position = Vector2(18.5, 321.5)
+shape = SubResource("RectangleShape2D_lme1l")
+
+[node name="Chao" type="StaticBody2D" parent="."]
+
+[node name="Panel2" type="Panel" parent="Chao"]
+offset_left = -1.0
+offset_top = 587.0
+offset_right = 1151.0
+offset_bottom = 646.0
+metadata/_edit_use_anchors_ = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Chao"]
+position = Vector2(575.25, 617.5)
+shape = SubResource("RectangleShape2D_ynouf")
+
+[node name="Player Foxy" parent="." instance=ExtResource("1_fh4qj")]
+position = Vector2(518, 264)
