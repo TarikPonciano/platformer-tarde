@@ -4,6 +4,7 @@ extends CharacterBody2D
 const SPEED = 300.0
 const JUMP_VELOCITY = -400.0
 var pulo_duplo = true
+@onready var animacao = $AnimatedSprite2D
 
 
 func _physics_process(delta: float) -> void:
@@ -31,7 +32,24 @@ func _physics_process(delta: float) -> void:
 		velocity.x = direction * SPEED
 	else:
 		velocity.x = move_toward(velocity.x, 0, SPEED)
-		
 	
+	atualizar_animacao()
 
 	move_and_slide()
+	
+
+	
+func atualizar_animacao():
+	if velocity.x > 0:
+		animacao.flip_h = false
+	else:
+		animacao.flip_h = true
+	
+	if velocity.y < 0:
+		animacao.play("jump")
+	elif velocity.y > 0:
+		animacao.play("fall")
+	elif velocity.x != 0:
+		animacao.play("run")
+	else:
+		animacao.play("idle")
