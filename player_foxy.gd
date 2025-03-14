@@ -42,7 +42,7 @@ func _physics_process(delta: float) -> void:
 func atualizar_animacao():
 	if velocity.x > 0:
 		animacao.flip_h = false
-	else:
+	elif velocity.x < 0:
 		animacao.flip_h = true
 	
 	if velocity.y < 0:
