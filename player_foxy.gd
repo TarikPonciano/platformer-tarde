@@ -53,3 +53,15 @@ func atualizar_animacao():
 		animacao.play("run")
 	else:
 		animacao.play("idle")
+
+
+func _on_hit_box_body_entered(body: Node2D) -> void:
+	
+	if (body.name == "Inimigo Sapo"):
+		self.queue_free()
+
+
+func _on_kill_box_body_entered(body: Node2D) -> void:
+	if (body.name == "Inimigo Sapo"):
+		body.queue_free()
+		self.velocity.y = JUMP_VELOCITY

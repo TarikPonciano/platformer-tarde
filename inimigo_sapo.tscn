@@ -1,0 +1,85 @@
+[gd_scene load_steps=13 format=3 uid="uid://ci8ovji2nukhl"]
+
+[ext_resource type="Texture2D" uid="uid://dlr5iwv65ub6w" path="res://Recursos/Personagens/Inimigo - Sapo/frog-idle.png" id="1_7cxmi"]
+[ext_resource type="Script" path="res://inimigo_sapo.gd" id="1_ffe01"]
+[ext_resource type="Texture2D" uid="uid://bn6sb0l80crlr" path="res://Recursos/Personagens/Inimigo - Sapo/frog-jump.png" id="2_nlufw"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7181k"]
+atlas = ExtResource("1_7cxmi")
+region = Rect2(0, 0, 35, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7488v"]
+atlas = ExtResource("1_7cxmi")
+region = Rect2(35, 0, 35, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xpevw"]
+atlas = ExtResource("1_7cxmi")
+region = Rect2(70, 0, 35, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_sqhhd"]
+atlas = ExtResource("1_7cxmi")
+region = Rect2(105, 0, 35, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_838mf"]
+atlas = ExtResource("2_nlufw")
+region = Rect2(0, 0, 35, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5i6rl"]
+atlas = ExtResource("2_nlufw")
+region = Rect2(35, 0, 35, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hs5sn"]
+atlas = ExtResource("2_nlufw")
+region = Rect2(70, 0, 35, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_2j28f"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7181k")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7488v")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xpevw")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_sqhhd")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_838mf")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5i6rl")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_hs5sn")
+}],
+"loop": true,
+"name": &"jump",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_xgo5k"]
+size = Vector2(24, 20)
+
+[node name="Inimigo Sapo" type="CharacterBody2D"]
+script = ExtResource("1_ffe01")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+scale = Vector2(2, 2)
+sprite_frames = SubResource("SpriteFrames_2j28f")
+animation = &"idle"
+autoplay = "idle"
+frame_progress = 0.693963
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-2, 2)
+scale = Vector2(2, 2)
+shape = SubResource("RectangleShape2D_xgo5k")
