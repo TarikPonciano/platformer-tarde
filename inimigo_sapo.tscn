@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=3 uid="uid://ci8ovji2nukhl"]
+[gd_scene load_steps=14 format=3 uid="uid://ci8ovji2nukhl"]
 
 [ext_resource type="Texture2D" uid="uid://dlr5iwv65ub6w" path="res://Recursos/Personagens/Inimigo - Sapo/frog-idle.png" id="1_7cxmi"]
 [ext_resource type="Script" path="res://inimigo_sapo.gd" id="1_ffe01"]
@@ -69,6 +69,9 @@ animations = [{
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_xgo5k"]
 size = Vector2(24, 20)
 
+[sub_resource type="CircleShape2D" id="CircleShape2D_7qf8e"]
+radius = 376.001
+
 [node name="Inimigo Sapo" type="CharacterBody2D"]
 script = ExtResource("1_ffe01")
 
@@ -77,9 +80,17 @@ scale = Vector2(2, 2)
 sprite_frames = SubResource("SpriteFrames_2j28f")
 animation = &"idle"
 autoplay = "idle"
-frame_progress = 0.693963
+frame_progress = 0.142404
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(-2, 2)
 scale = Vector2(2, 2)
 shape = SubResource("RectangleShape2D_xgo5k")
+
+[node name="DetectarPlayer" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="DetectarPlayer"]
+shape = SubResource("CircleShape2D_7qf8e")
+
+[connection signal="body_entered" from="DetectarPlayer" to="." method="_on_detectar_player_body_entered"]
+[connection signal="body_exited" from="DetectarPlayer" to="." method="_on_detectar_player_body_exited"]
