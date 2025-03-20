@@ -19,7 +19,7 @@ func _physics_process(delta: float) -> void:
 	# Get the input direction and handle the movement/deceleration.
 	# As good practice, you should replace UI actions with custom gameplay actions.
 	
-	if (perseguir):
+	if (perseguir && jogador.morrendo != true):
 		var distancia = (jogador.position - self.position).x
 		
 		if distancia > 0:

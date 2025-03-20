@@ -165,7 +165,8 @@ physics_layer_0/collision_layer = 1
 sources/0 = SubResource("TileSetAtlasSource_r20vl")
 
 [node name="Main" type="Node2D"]
-metadata/_edit_horizontal_guides_ = [643.0]
+metadata/_edit_horizontal_guides_ = [643.0, 301.0]
+metadata/_edit_vertical_guides_ = [300.0]
 
 [node name="Player Foxy" parent="." instance=ExtResource("1_fh4qj")]
 position = Vector2(518, 264)

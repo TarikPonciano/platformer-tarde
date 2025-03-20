@@ -5,10 +5,12 @@ const SPEED = 300.0
 const JUMP_VELOCITY = -400.0
 var pulo_duplo = true
 @onready var animacao = $AnimatedSprite2D
+var morrendo = false
 
 
 func _physics_process(delta: float) -> void:
-	
+	if (morrendo):
+		return
 	# Add the gravity.
 	if not is_on_floor():
 		if Input.is_action_just_pressed("ui_accept") and pulo_duplo:
@@ -58,7 +60,14 @@ func atualizar_animacao():
 func _on_hit_box_body_entered(body: Node2D) -> void:
 	
 	if (body.name == "Inimigo Sapo"):
-		self.queue_free()
+		animacao.play("death")
+		morrendo = true
+		await animacao.animation_finished
+		
+		self.position = Vector2(300,300)
+		morrendo = false
+		
+		#get_tree().reload_current_scene()
 
 
 func _on_kill_box_body_entered(body: Node2D) -> void:
