@@ -8,8 +8,11 @@ var direction = 0
 var perseguir = false
 var jogador = null
 var pulinho = true
+var morrendo = false
 
 func _physics_process(delta: float) -> void:
+	if (morrendo):
+		return
 	# Add the gravity.
 	if not is_on_floor():
 		velocity += get_gravity() * delta
@@ -48,6 +51,11 @@ func atualizar_animacao():
 	else:
 		animation.play("idle")
 		
+
+func morrer():
+	morrendo = true
+	$CollisionShape2D.queue_free()
+	$DetectarPlayer.queue_free()
 
 
 func _on_detectar_player_body_entered(body: Node2D) -> void:

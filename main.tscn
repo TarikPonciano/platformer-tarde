@@ -1,8 +1,11 @@
-[gd_scene load_steps=6 format=4 uid="uid://qxo2p4whtitq"]
+[gd_scene load_steps=15 format=4 uid="uid://qxo2p4whtitq"]
 
 [ext_resource type="PackedScene" uid="uid://d10vsmbcp4v2v" path="res://player-foxy.tscn" id="1_fh4qj"]
 [ext_resource type="Texture2D" uid="uid://cjmkb21vam3cr" path="res://Recursos/Tilesets/tileset-terra.png" id="2_axp3k"]
 [ext_resource type="PackedScene" uid="uid://ci8ovji2nukhl" path="res://inimigo_sapo.tscn" id="3_ibiav"]
+[ext_resource type="PackedScene" uid="uid://blg5p1icl36ie" path="res://gem.tscn" id="4_1hgk1"]
+[ext_resource type="Script" path="res://canvas_layer.gd" id="5_hjna1"]
+[ext_resource type="Texture2D" uid="uid://bi86iljqw62m1" path="res://Recursos/Itens/spritesheet-gem.png" id="5_t442j"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_r20vl"]
 texture = ExtResource("2_axp3k")
@@ -164,9 +167,50 @@ texture = ExtResource("2_axp3k")
 physics_layer_0/collision_layer = 1
 sources/0 = SubResource("TileSetAtlasSource_r20vl")
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_tuc0o"]
+atlas = ExtResource("5_t442j")
+region = Rect2(0, 0, 15, 13)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_icf4k"]
+atlas = ExtResource("5_t442j")
+region = Rect2(15, 0, 15, 13)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_f10p4"]
+atlas = ExtResource("5_t442j")
+region = Rect2(30, 0, 15, 13)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_omyai"]
+atlas = ExtResource("5_t442j")
+region = Rect2(45, 0, 15, 13)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qrm1x"]
+atlas = ExtResource("5_t442j")
+region = Rect2(60, 0, 15, 13)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_fccl4"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_tuc0o")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_icf4k")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_f10p4")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_omyai")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qrm1x")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
 [node name="Main" type="Node2D"]
-metadata/_edit_horizontal_guides_ = [643.0, 301.0]
-metadata/_edit_vertical_guides_ = [300.0]
 
 [node name="Player Foxy" parent="." instance=ExtResource("1_fh4qj")]
 position = Vector2(518, 264)
@@ -177,3 +221,50 @@ tile_set = SubResource("TileSet_tim4a")
 
 [node name="Inimigo Sapo" parent="." instance=ExtResource("3_ibiav")]
 position = Vector2(1669, 323)
+
+[node name="Inimigo Sapo2" parent="." instance=ExtResource("3_ibiav")]
+position = Vector2(1129, 495)
+
+[node name="Inimigo Sapo3" parent="." instance=ExtResource("3_ibiav")]
+position = Vector2(860, 414)
+
+[node name="Inimigo Sapo4" parent="." instance=ExtResource("3_ibiav")]
+position = Vector2(1346, 487)
+
+[node name="Gem" parent="." instance=ExtResource("4_1hgk1")]
+position = Vector2(149, 488)
+
+[node name="Gem2" parent="." instance=ExtResource("4_1hgk1")]
+position = Vector2(353, 495)
+
+[node name="Gem3" parent="." instance=ExtResource("4_1hgk1")]
+position = Vector2(528, 493)
+
+[node name="Gem4" parent="." instance=ExtResource("4_1hgk1")]
+position = Vector2(667, 501)
+
+[node name="Gem5" parent="." instance=ExtResource("4_1hgk1")]
+position = Vector2(773, 456)
+
+[node name="Gem6" parent="." instance=ExtResource("4_1hgk1")]
+position = Vector2(843, 452)
+
+[node name="Gem7" parent="." instance=ExtResource("4_1hgk1")]
+position = Vector2(999, 514)
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+script = ExtResource("5_hjna1")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="CanvasLayer"]
+position = Vector2(91, 73)
+scale = Vector2(4, 4)
+sprite_frames = SubResource("SpriteFrames_fccl4")
+
+[node name="Label" type="Label" parent="CanvasLayer"]
+offset_left = 145.0
+offset_top = 49.0
+offset_right = 185.0
+offset_bottom = 99.0
+theme_override_font_sizes/font_size = 36
+horizontal_alignment = 1
+vertical_alignment = 1

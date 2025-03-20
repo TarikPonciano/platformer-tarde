@@ -6,6 +6,7 @@ const JUMP_VELOCITY = -400.0
 var pulo_duplo = true
 @onready var animacao = $AnimatedSprite2D
 var morrendo = false
+var gems = 0
 
 
 func _physics_process(delta: float) -> void:
@@ -59,7 +60,7 @@ func atualizar_animacao():
 
 func _on_hit_box_body_entered(body: Node2D) -> void:
 	
-	if (body.name == "Inimigo Sapo"):
+	if (body.is_in_group("enemy")):
 		animacao.play("death")
 		morrendo = true
 		await animacao.animation_finished
@@ -71,6 +72,16 @@ func _on_hit_box_body_entered(body: Node2D) -> void:
 
 
 func _on_kill_box_body_entered(body: Node2D) -> void:
-	if (body.name == "Inimigo Sapo"):
-		body.queue_free()
+	if (body.is_in_group("enemy")):
 		self.velocity.y = JUMP_VELOCITY
+		body.animation.play("death")
+		body.morrer()
+		await body.animation.animation_finished
+		body.queue_free()
+		
+
+func _on_collect_area_area_entered(area: Area2D) -> void:
+	if (area.is_in_group("colectables")):
+		gems += 1
+		print("Joias coletadas: ",gems)
+		area.queue_free() # Replace with function body.

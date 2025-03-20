@@ -1,0 +1,59 @@
+[gd_scene load_steps=9 format=3 uid="uid://blg5p1icl36ie"]
+
+[ext_resource type="Texture2D" uid="uid://bi86iljqw62m1" path="res://Recursos/Itens/spritesheet-gem.png" id="1_eptev"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8dx2v"]
+atlas = ExtResource("1_eptev")
+region = Rect2(0, 0, 15, 13)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ix5hg"]
+atlas = ExtResource("1_eptev")
+region = Rect2(15, 0, 15, 13)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_15388"]
+atlas = ExtResource("1_eptev")
+region = Rect2(30, 0, 15, 13)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_uxip5"]
+atlas = ExtResource("1_eptev")
+region = Rect2(45, 0, 15, 13)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ynakp"]
+atlas = ExtResource("1_eptev")
+region = Rect2(60, 0, 15, 13)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_hmkbl"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8dx2v")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ix5hg")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_15388")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_uxip5")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ynakp")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_bl3d6"]
+radius = 15.2971
+
+[node name="Gem" type="Area2D" groups=["colectables"]]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+scale = Vector2(2, 2)
+sprite_frames = SubResource("SpriteFrames_hmkbl")
+autoplay = "default"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_bl3d6")

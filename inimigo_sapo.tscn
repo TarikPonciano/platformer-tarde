@@ -1,8 +1,37 @@
-[gd_scene load_steps=14 format=3 uid="uid://ci8ovji2nukhl"]
+[gd_scene load_steps=22 format=3 uid="uid://ci8ovji2nukhl"]
 
 [ext_resource type="Texture2D" uid="uid://dlr5iwv65ub6w" path="res://Recursos/Personagens/Inimigo - Sapo/frog-idle.png" id="1_7cxmi"]
 [ext_resource type="Script" path="res://inimigo_sapo.gd" id="1_ffe01"]
 [ext_resource type="Texture2D" uid="uid://bn6sb0l80crlr" path="res://Recursos/Personagens/Inimigo - Sapo/frog-jump.png" id="2_nlufw"]
+[ext_resource type="Texture2D" uid="uid://hffj0ntifwc2" path="res://Recursos/Personagens/Inimigo - Sapo/spritesheet-morte-inimigo.png" id="2_qro0u"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_c0ovd"]
+atlas = ExtResource("2_qro0u")
+region = Rect2(0, 0, 64, 58)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_feg2r"]
+atlas = ExtResource("2_qro0u")
+region = Rect2(64, 0, 64, 58)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8x63m"]
+atlas = ExtResource("2_qro0u")
+region = Rect2(128, 0, 64, 58)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_mscx4"]
+atlas = ExtResource("2_qro0u")
+region = Rect2(192, 0, 64, 58)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wiydw"]
+atlas = ExtResource("2_qro0u")
+region = Rect2(256, 0, 64, 58)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1lyas"]
+atlas = ExtResource("2_qro0u")
+region = Rect2(320, 0, 64, 58)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_syjvy"]
+atlas = ExtResource("2_qro0u")
+region = Rect2(384, 0, 64, 58)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_7181k"]
 atlas = ExtResource("1_7cxmi")
@@ -34,6 +63,32 @@ region = Rect2(70, 0, 35, 32)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_2j28f"]
 animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_c0ovd")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_feg2r")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8x63m")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_mscx4")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_wiydw")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1lyas")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_syjvy")
+}],
+"loop": false,
+"name": &"death",
+"speed": 8.0
+}, {
 "frames": [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_7181k")
@@ -72,15 +127,16 @@ size = Vector2(24, 20)
 [sub_resource type="CircleShape2D" id="CircleShape2D_7qf8e"]
 radius = 376.001
 
-[node name="Inimigo Sapo" type="CharacterBody2D"]
+[node name="Inimigo Sapo" type="CharacterBody2D" groups=["enemy"]]
 script = ExtResource("1_ffe01")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 scale = Vector2(2, 2)
 sprite_frames = SubResource("SpriteFrames_2j28f")
-animation = &"idle"
+animation = &"death"
 autoplay = "idle"
-frame_progress = 0.142404
+frame = 6
+frame_progress = 1.0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(-2, 2)
