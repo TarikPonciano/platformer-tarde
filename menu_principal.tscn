@@ -1,0 +1,253 @@
+[gd_scene load_steps=28 format=3 uid="uid://d36r1f2l3m8s2"]
+
+[ext_resource type="Script" path="res://menu_principal.gd" id="1_ornr7"]
+[ext_resource type="Texture2D" uid="uid://bnschiuwrjqri" path="res://Recursos/Personagens/Sunny/sunny-bunny-idle.png" id="1_xylp7"]
+[ext_resource type="Texture2D" uid="uid://dv21fofni6mqc" path="res://Recursos/Personagens/Sunny/sunny-bunny-run.png" id="2_ac40y"]
+[ext_resource type="Texture2D" uid="uid://dvyhibjrr6nbt" path="res://Recursos/Personagens/Foxy/Spritesheet-Foxy.png" id="3_0g1qq"]
+
+[sub_resource type="Theme" id="Theme_tev7u"]
+Button/font_sizes/font_size = 32
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vch3t"]
+atlas = ExtResource("1_xylp7")
+region = Rect2(0, 0, 24, 42)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_pg7is"]
+atlas = ExtResource("1_xylp7")
+region = Rect2(24, 0, 24, 42)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_b8fle"]
+atlas = ExtResource("1_xylp7")
+region = Rect2(48, 0, 24, 42)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7pdh1"]
+atlas = ExtResource("1_xylp7")
+region = Rect2(72, 0, 24, 42)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_bbmyp"]
+atlas = ExtResource("2_ac40y")
+region = Rect2(0, 0, 34, 44)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_x6ur7"]
+atlas = ExtResource("2_ac40y")
+region = Rect2(34, 0, 34, 44)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_16fqt"]
+atlas = ExtResource("2_ac40y")
+region = Rect2(68, 0, 34, 44)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_l547j"]
+atlas = ExtResource("2_ac40y")
+region = Rect2(102, 0, 34, 44)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_gs5ft"]
+atlas = ExtResource("2_ac40y")
+region = Rect2(136, 0, 34, 44)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_lfnl1"]
+atlas = ExtResource("2_ac40y")
+region = Rect2(170, 0, 34, 44)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_tglp4"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vch3t")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_pg7is")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_b8fle")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7pdh1")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_bbmyp")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_x6ur7")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_16fqt")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_l547j")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_gs5ft")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_lfnl1")
+}],
+"loop": true,
+"name": &"run",
+"speed": 5.0
+}]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_tgb84"]
+atlas = ExtResource("3_0g1qq")
+region = Rect2(0, 0, 33, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qd080"]
+atlas = ExtResource("3_0g1qq")
+region = Rect2(33, 0, 33, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_nfxfy"]
+atlas = ExtResource("3_0g1qq")
+region = Rect2(66, 0, 33, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_yn5bu"]
+atlas = ExtResource("3_0g1qq")
+region = Rect2(99, 0, 33, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_a8fjk"]
+atlas = ExtResource("3_0g1qq")
+region = Rect2(0, 32, 33, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vrwsn"]
+atlas = ExtResource("3_0g1qq")
+region = Rect2(33, 32, 33, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4g884"]
+atlas = ExtResource("3_0g1qq")
+region = Rect2(66, 32, 33, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_55dtv"]
+atlas = ExtResource("3_0g1qq")
+region = Rect2(99, 32, 33, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_f1iym"]
+atlas = ExtResource("3_0g1qq")
+region = Rect2(132, 32, 33, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_a2npq"]
+atlas = ExtResource("3_0g1qq")
+region = Rect2(165, 32, 33, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_878o0"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_tgb84")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qd080")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_nfxfy")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_yn5bu")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_a8fjk")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vrwsn")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4g884")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_55dtv")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_f1iym")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_a2npq")
+}],
+"loop": true,
+"name": &"run",
+"speed": 5.0
+}]
+
+[node name="Menu Principal" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = SubResource("Theme_tev7u")
+script = ExtResource("1_ornr7")
+
+[node name="Panel" type="Panel" parent="."]
+layout_mode = 0
+offset_right = 1152.0
+offset_bottom = 647.0
+
+[node name="SairBotao" type="Button" parent="Panel"]
+layout_mode = 0
+offset_left = 552.0
+offset_top = 488.0
+offset_right = 696.0
+offset_bottom = 541.0
+text = "Sair"
+
+[node name="IniciarBotao" type="Button" parent="Panel"]
+layout_mode = 0
+offset_left = 552.0
+offset_top = 376.0
+offset_right = 696.0
+offset_bottom = 429.0
+text = "Iniciar"
+
+[node name="SunnyBotao" type="Button" parent="Panel"]
+layout_mode = 0
+offset_left = 688.0
+offset_top = 256.0
+offset_right = 832.0
+offset_bottom = 309.0
+text = "Sunny
+"
+alignment = 2
+
+[node name="Label" type="Label" parent="Panel"]
+layout_mode = 0
+offset_left = 376.0
+offset_top = 80.0
+offset_right = 867.0
+offset_bottom = 147.0
+theme_override_font_sizes/font_size = 48
+text = "Foxy e Sunny O JOGO"
+
+[node name="FoxyBotao" type="Button" parent="Panel"]
+layout_mode = 0
+offset_left = 416.0
+offset_top = 256.0
+offset_right = 560.0
+offset_bottom = 309.0
+text = "Foxy
+"
+alignment = 2
+
+[node name="Sunny" type="AnimatedSprite2D" parent="Panel"]
+position = Vector2(712, 280)
+sprite_frames = SubResource("SpriteFrames_tglp4")
+animation = &"idle"
+autoplay = "idle"
+
+[node name="Foxy" type="AnimatedSprite2D" parent="Panel"]
+position = Vector2(448, 280)
+scale = Vector2(1.5, 1.5)
+sprite_frames = SubResource("SpriteFrames_878o0")
+animation = &"idle"
+autoplay = "idle"
+
+[connection signal="pressed" from="Panel/SairBotao" to="." method="_on_sair_botao_pressed"]
+[connection signal="pressed" from="Panel/IniciarBotao" to="." method="_on_iniciar_botao_pressed"]
+[connection signal="pressed" from="Panel/SunnyBotao" to="." method="_on_sunny_botao_pressed"]
+[connection signal="pressed" from="Panel/FoxyBotao" to="." method="_on_foxy_botao_pressed"]

@@ -10,4 +10,5 @@ func _ready() -> void:
 func _process(delta: float) -> void:
 	
 	var player = get_parent().get_node_or_null("Player")
-	$Label.text = str(player.gems)
+	if player:
+		$Label.text = str(player.gems)
