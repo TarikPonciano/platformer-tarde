@@ -1,5 +1,6 @@
-[gd_scene load_steps=9 format=3 uid="uid://blg5p1icl36ie"]
+[gd_scene load_steps=10 format=3 uid="uid://blg5p1icl36ie"]
 
+[ext_resource type="Script" path="res://gem.gd" id="1_6r060"]
 [ext_resource type="Texture2D" uid="uid://bi86iljqw62m1" path="res://Recursos/Itens/spritesheet-gem.png" id="1_eptev"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_8dx2v"]
@@ -49,6 +50,7 @@ animations = [{
 radius = 15.2971
 
 [node name="Gem" type="Area2D" groups=["colectables"]]
+script = ExtResource("1_6r060")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 scale = Vector2(2, 2)
@@ -57,3 +59,9 @@ autoplay = "default"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("CircleShape2D_bl3d6")
+
+[node name="TimerDestruir" type="Timer" parent="."]
+wait_time = 5.0
+autostart = true
+
+[connection signal="timeout" from="TimerDestruir" to="." method="_on_timer_timeout"]

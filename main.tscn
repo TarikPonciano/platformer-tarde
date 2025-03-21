@@ -2,9 +2,9 @@
 
 [ext_resource type="PackedScene" uid="uid://d10vsmbcp4v2v" path="res://player-foxy.tscn" id="1_fh4qj"]
 [ext_resource type="Texture2D" uid="uid://cjmkb21vam3cr" path="res://Recursos/Tilesets/tileset-terra.png" id="2_axp3k"]
-[ext_resource type="PackedScene" uid="uid://ci8ovji2nukhl" path="res://inimigo_sapo.tscn" id="3_ibiav"]
 [ext_resource type="PackedScene" uid="uid://blg5p1icl36ie" path="res://gem.tscn" id="4_1hgk1"]
 [ext_resource type="Script" path="res://canvas_layer.gd" id="5_hjna1"]
+[ext_resource type="Script" path="res://coletaveis.gd" id="5_i0q4l"]
 [ext_resource type="Texture2D" uid="uid://bi86iljqw62m1" path="res://Recursos/Itens/spritesheet-gem.png" id="5_t442j"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_r20vl"]
@@ -237,38 +237,174 @@ horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="Coletaveis" type="Node" parent="."]
+script = ExtResource("5_i0q4l")
+gemScene = ExtResource("4_1hgk1")
 
-[node name="Gem" parent="Coletaveis" instance=ExtResource("4_1hgk1")]
-position = Vector2(149, 488)
+[node name="Timer" type="Timer" parent="Coletaveis"]
+wait_time = 0.5
+autostart = true
 
-[node name="Gem2" parent="Coletaveis" instance=ExtResource("4_1hgk1")]
-position = Vector2(353, 495)
+[node name="SpawnPoints" type="Node" parent="Coletaveis"]
 
-[node name="Gem3" parent="Coletaveis" instance=ExtResource("4_1hgk1")]
-position = Vector2(528, 493)
+[node name="Marker2D" type="Marker2D" parent="Coletaveis/SpawnPoints"]
+position = Vector2(55, 513)
 
-[node name="Gem4" parent="Coletaveis" instance=ExtResource("4_1hgk1")]
-position = Vector2(667, 501)
+[node name="Marker2D2" type="Marker2D" parent="Coletaveis/SpawnPoints"]
+position = Vector2(149, 513)
 
-[node name="Gem5" parent="Coletaveis" instance=ExtResource("4_1hgk1")]
-position = Vector2(773, 456)
+[node name="Marker2D3" type="Marker2D" parent="Coletaveis/SpawnPoints"]
+position = Vector2(228, 511)
 
-[node name="Gem6" parent="Coletaveis" instance=ExtResource("4_1hgk1")]
-position = Vector2(843, 452)
+[node name="Marker2D4" type="Marker2D" parent="Coletaveis/SpawnPoints"]
+position = Vector2(298, 511)
 
-[node name="Gem7" parent="Coletaveis" instance=ExtResource("4_1hgk1")]
-position = Vector2(999, 514)
+[node name="Marker2D5" type="Marker2D" parent="Coletaveis/SpawnPoints"]
+position = Vector2(398, 509)
+
+[node name="Marker2D6" type="Marker2D" parent="Coletaveis/SpawnPoints"]
+position = Vector2(471, 509)
+
+[node name="Marker2D7" type="Marker2D" parent="Coletaveis/SpawnPoints"]
+position = Vector2(543, 509)
+
+[node name="Marker2D8" type="Marker2D" parent="Coletaveis/SpawnPoints"]
+position = Vector2(601, 507)
+
+[node name="Marker2D9" type="Marker2D" parent="Coletaveis/SpawnPoints"]
+position = Vector2(663, 505)
+
+[node name="Marker2D10" type="Marker2D" parent="Coletaveis/SpawnPoints"]
+position = Vector2(718, 464)
+
+[node name="Marker2D11" type="Marker2D" parent="Coletaveis/SpawnPoints"]
+position = Vector2(791, 456)
+
+[node name="Marker2D12" type="Marker2D" parent="Coletaveis/SpawnPoints"]
+position = Vector2(864, 456)
+
+[node name="Marker2D13" type="Marker2D" parent="Coletaveis/SpawnPoints"]
+position = Vector2(725, 543)
+
+[node name="Marker2D14" type="Marker2D" parent="Coletaveis/SpawnPoints"]
+position = Vector2(774, 541)
+
+[node name="Marker2D15" type="Marker2D" parent="Coletaveis/SpawnPoints"]
+position = Vector2(829, 543)
+
+[node name="Marker2D16" type="Marker2D" parent="Coletaveis/SpawnPoints"]
+position = Vector2(889, 543)
+
+[node name="Marker2D17" type="Marker2D" parent="Coletaveis/SpawnPoints"]
+position = Vector2(979, 541)
+
+[node name="Marker2D18" type="Marker2D" parent="Coletaveis/SpawnPoints"]
+position = Vector2(953, 449)
+
+[node name="Marker2D19" type="Marker2D" parent="Coletaveis/SpawnPoints"]
+position = Vector2(1038, 455)
+
+[node name="Marker2D20" type="Marker2D" parent="Coletaveis/SpawnPoints"]
+position = Vector2(1049, 532)
+
+[node name="Marker2D21" type="Marker2D" parent="Coletaveis/SpawnPoints"]
+position = Vector2(1155, 460)
+
+[node name="Marker2D22" type="Marker2D" parent="Coletaveis/SpawnPoints"]
+position = Vector2(1228, 452)
+
+[node name="Marker2D23" type="Marker2D" parent="Coletaveis/SpawnPoints"]
+position = Vector2(1301, 452)
+
+[node name="Marker2D24" type="Marker2D" parent="Coletaveis/SpawnPoints"]
+position = Vector2(1162, 539)
+
+[node name="Marker2D25" type="Marker2D" parent="Coletaveis/SpawnPoints"]
+position = Vector2(1211, 537)
+
+[node name="Marker2D26" type="Marker2D" parent="Coletaveis/SpawnPoints"]
+position = Vector2(1266, 539)
+
+[node name="Marker2D27" type="Marker2D" parent="Coletaveis/SpawnPoints"]
+position = Vector2(1326, 539)
+
+[node name="Marker2D28" type="Marker2D" parent="Coletaveis/SpawnPoints"]
+position = Vector2(1416, 537)
+
+[node name="Marker2D29" type="Marker2D" parent="Coletaveis/SpawnPoints"]
+position = Vector2(1390, 445)
+
+[node name="Marker2D30" type="Marker2D" parent="Coletaveis/SpawnPoints"]
+position = Vector2(1475, 451)
+
+[node name="Marker2D31" type="Marker2D" parent="Coletaveis/SpawnPoints"]
+position = Vector2(1486, 528)
+
+[node name="Marker2D32" type="Marker2D" parent="Coletaveis/SpawnPoints"]
+position = Vector2(1547, 449)
+
+[node name="Marker2D33" type="Marker2D" parent="Coletaveis/SpawnPoints"]
+position = Vector2(1620, 441)
+
+[node name="Marker2D34" type="Marker2D" parent="Coletaveis/SpawnPoints"]
+position = Vector2(1693, 441)
+
+[node name="Marker2D35" type="Marker2D" parent="Coletaveis/SpawnPoints"]
+position = Vector2(1554, 528)
+
+[node name="Marker2D36" type="Marker2D" parent="Coletaveis/SpawnPoints"]
+position = Vector2(1603, 526)
+
+[node name="Marker2D37" type="Marker2D" parent="Coletaveis/SpawnPoints"]
+position = Vector2(1658, 528)
+
+[node name="Marker2D38" type="Marker2D" parent="Coletaveis/SpawnPoints"]
+position = Vector2(1718, 528)
+
+[node name="Marker2D39" type="Marker2D" parent="Coletaveis/SpawnPoints"]
+position = Vector2(1808, 526)
+
+[node name="Marker2D40" type="Marker2D" parent="Coletaveis/SpawnPoints"]
+position = Vector2(1782, 434)
+
+[node name="Marker2D41" type="Marker2D" parent="Coletaveis/SpawnPoints"]
+position = Vector2(1867, 440)
+
+[node name="Marker2D42" type="Marker2D" parent="Coletaveis/SpawnPoints"]
+position = Vector2(1878, 517)
+
+[node name="Marker2D43" type="Marker2D" parent="Coletaveis/SpawnPoints"]
+position = Vector2(1922, 452)
+
+[node name="Marker2D44" type="Marker2D" parent="Coletaveis/SpawnPoints"]
+position = Vector2(1995, 444)
+
+[node name="Marker2D45" type="Marker2D" parent="Coletaveis/SpawnPoints"]
+position = Vector2(2068, 444)
+
+[node name="Marker2D46" type="Marker2D" parent="Coletaveis/SpawnPoints"]
+position = Vector2(1929, 531)
+
+[node name="Marker2D47" type="Marker2D" parent="Coletaveis/SpawnPoints"]
+position = Vector2(1978, 529)
+
+[node name="Marker2D48" type="Marker2D" parent="Coletaveis/SpawnPoints"]
+position = Vector2(2033, 531)
+
+[node name="Marker2D49" type="Marker2D" parent="Coletaveis/SpawnPoints"]
+position = Vector2(2093, 531)
+
+[node name="Marker2D50" type="Marker2D" parent="Coletaveis/SpawnPoints"]
+position = Vector2(2183, 529)
+
+[node name="Marker2D51" type="Marker2D" parent="Coletaveis/SpawnPoints"]
+position = Vector2(2157, 437)
+
+[node name="Marker2D52" type="Marker2D" parent="Coletaveis/SpawnPoints"]
+position = Vector2(2242, 443)
+
+[node name="Marker2D53" type="Marker2D" parent="Coletaveis/SpawnPoints"]
+position = Vector2(2253, 520)
 
 [node name="Inimigos" type="Node" parent="."]
 
-[node name="Inimigo Sapo" parent="Inimigos" instance=ExtResource("3_ibiav")]
-position = Vector2(1669, 323)
-
-[node name="Inimigo Sapo2" parent="Inimigos" instance=ExtResource("3_ibiav")]
-position = Vector2(1129, 495)
-
-[node name="Inimigo Sapo3" parent="Inimigos" instance=ExtResource("3_ibiav")]
-position = Vector2(860, 414)
-
-[node name="Inimigo Sapo4" parent="Inimigos" instance=ExtResource("3_ibiav")]
-position = Vector2(1346, 487)
+[connection signal="timeout" from="Coletaveis/Timer" to="Coletaveis" method="_on_timer_timeout"]
