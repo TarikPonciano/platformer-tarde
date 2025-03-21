@@ -59,7 +59,7 @@ func morrer():
 
 
 func _on_detectar_player_body_entered(body: Node2D) -> void:
-	if (body.name == "Player Foxy"):
+	if (body.name == "Player"):
 		
 		perseguir = true
 		jogador = body
@@ -67,7 +67,6 @@ func _on_detectar_player_body_entered(body: Node2D) -> void:
 
 
 func _on_detectar_player_body_exited(body: Node2D) -> void:
-	if (body.name == "Player Foxy"):
-		perseguir = false
+	if (body.name == "Player"):
 		jogador = null
 		direction = 0

@@ -1,6 +1,6 @@
 [gd_scene load_steps=29 format=3 uid="uid://c8pbndmjwaq5f"]
 
-[ext_resource type="Script" path="res://player_foxy.gd" id="1_lfuim"]
+[ext_resource type="Script" path="res://player_sunny.gd" id="1_k82ic"]
 [ext_resource type="Texture2D" uid="uid://dv21fofni6mqc" path="res://Recursos/Personagens/Sunny/sunny-bunny-run.png" id="2_hmayu"]
 [ext_resource type="Texture2D" uid="uid://dro53piok8r6p" path="res://Recursos/Personagens/Foxy/spritesheet-explosao.png" id="3_4fpoh"]
 [ext_resource type="Texture2D" uid="uid://pnvb6wbg0rmr" path="res://Recursos/Personagens/Sunny/sunny-bunny-jump.png" id="4_05ge4"]
@@ -197,8 +197,8 @@ size = Vector2(31, 11)
 [sub_resource type="CircleShape2D" id="CircleShape2D_lip1x"]
 radius = 33.0606
 
-[node name="Player Sunny" type="CharacterBody2D"]
-script = ExtResource("1_lfuim")
+[node name="Player" type="CharacterBody2D"]
+script = ExtResource("1_k82ic")
 metadata/_edit_horizontal_guides_ = [16.0]
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
